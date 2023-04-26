@@ -1,0 +1,28 @@
+{
+  "name": "Every Day About You",
+  "description": "Every Day About You",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+      "default_icon": "ex_icon.png"
+  },
+  "permissions": [
+      "activeTab"
+  ],
+  "content_scripts": [
+      {
+          "matches": [
+              "<all_urls>"
+          ],
+          "js": [
+              "demo.js",
+              "index.js"
+          ],
+          "run_at": "document_start"
+      }
+  ],
+  "chrome_url_overrides": {
+      "newtab": "demo.html"
+  },
+  "offline_enabled": true
+}

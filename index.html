@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Every Day About You</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <style>
+      :root {
+        font-family: 'Aleo', sans-serif;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+
+      .label {
+        font-size: 2.2rem;
+        background: url('https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e01830b205c2489cac8b45646a221553~tplv-k3u1fbpfcp-watermark.image?');
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: moveBg 30s linear infinite;
+      }
+
+      @keyframes moveBg {
+        0% {
+          background-position: 0% 30%;
+        }
+
+        100% {
+          background-position: 1000% 500%;
+        }
+      }
+
+      .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        user-select: none;
+      }
+
+      .time {
+        color: #d99c3b;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+      }
+
+      .time span {
+        padding: 0 14px;
+        font-size: 0.8rem;
+      }
+
+      .time span div {
+        font-size: 3rem;
+      }
+
+      @media (max-width: 740px) {
+        .label {
+          font-size: 1.7rem;
+        }
+
+        .time span {
+          padding: 0 16px;
+          font-size: 0.6rem;
+        }
+
+        .time span div {
+          font-size: 2rem;
+        }
+      }
+
+      .search {
+        width: 750px;
+        height: 50px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        min-width: 750px;
+        position: relative;
+      }
+
+      input {
+        width: 550px;
+        height: 40px;
+        border-right: none;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        border-color: #f5f5f5;
+        /* 去除搜索框激活状态的边框 */
+        outline: none;
+      }
+
+      input:hover {
+        /* 鼠标移入状态 */
+        box-shadow: 2px 2px 2px #ccc;
+      }
+
+      input:focus {
+        /* 选中状态,边框颜色变化 */
+        border-color: rgb(78, 110, 242);
+      }
+
+      .search span {
+        position: absolute;
+        font-size: 23px;
+        top: 10px;
+        right: 170px;
+      }
+
+      .search span:hover {
+        color: rgb(78, 110, 242);
+      }
+
+      button {
+        width: 100px;
+        height: 44px;
+        background-color: rgb(78, 110, 242);
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        border-color: rgb(78, 110, 242);
+        color: white;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 这个作品是给女朋友做的一个chrome浏览器tab页插件 -->
+    <!-- 掘金文章地址：https://juejin.cn/post/7122332008252080142 -->
+    <!-- 可以参考文章自己做一个插件页哦！！ -->
+    <canvas
+      id="c"
+      style="position: absolute; z-index: -1; text-align: center"
+    ></canvas>
+    <div class="middle">
+      <h1 class="label">Every Day About You</h1>
+      <div class="search">
+        <input id="input" type="text" />
+        <button>百度一下</button>
+      </div>
+      <div class="time">
+        <span>
+          <div id="d">00</div>
+          Love day
+        </span>
+        <span>
+          <div id="h">00</div>
+          First Met
+        </span>
+        <span>
+          <div id="m">00</div>
+          birthday
+        </span>
+        <span>
+          <div id="s">00</div>
+          age
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
